@@ -1,3 +1,0 @@
-default_remote = "ednark@ssh.pijul.com/ednark/ett-spa"
-[hooks]
-record = []
