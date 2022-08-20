@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Emergent Task Timer</title>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/ett.layout.css">
+	<link rel="stylesheet" href="css/ett.styles.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css">
+
+</head>
+<!-- https://developer.okta.com/blog/2019/12/18/vanilla-javascript-components -->
+<body id="ett">
+
+	<header id="ett-header">
+		<div id="ett-title">Emergent Task Timer</div>
+		<div id="ett-date-container">
+			<input id="ett-date" value="YYYY-MM-DD" />
+		</div>
+	</header>
+
+	<main id="ett-tasks">
+		<div id="task-header" class="ett-task task-header" role="ett-task" data-date="" data-time="0" data-name=""
+			><div class="ett-task-index"><br /></div
+			><div class="ett-task-name"><input name="ett-task-name" value="THE MAJOR TASKS FOR TODAY" readonly="readonly" /></div
+			><div class="ett-task-time"
+					unselectable="on"
+					onselectstart="javascript: return false;"
+					ondrag="javascript: return false;"
+					onmousedown="javascript: return false;">
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="11">11AM</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="12">12PM</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="13">1PM</div>
+			</div
+			><div class="ett-task-total">0</div
+		></div>
+		<div class="ett-task ett-major-task" role="ett-task" data-date="" data-time="0" data-name=""
+			><div class="ett-task-index">00</div
+			><div class="ett-task-name"><input name="ett-task-name" /></div
+			><div class="ett-task-time"
+					unselectable="on"
+					onselectstart="javascript: return false;"
+					ondrag="javascript: return false;"
+					onmousedown="javascript: return false;">
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="11">
+					<div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div>
+				</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="12">
+					<div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div>
+				</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="13">
+					<div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div>
+				</div>
+			</div
+			><div class="ett-task-total">0</div
+		></div>
+		<div id="task-subheader" class="ett-task task-header" role="ett-task" data-date="" data-time="0" data-name=""
+			><div class="ett-task-index"><br /></div
+			><div class="ett-task-name"><input name="ett-task-name" value="STUFF THAT &quot;JUST HAPPENED&quot;" readonly="readonly" /></div
+			><div class="ett-task-time"
+					unselectable="on"
+					onselectstart="javascript: return false;"
+					ondrag="javascript: return false;"
+					onmousedown="javascript: return false;">
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="11">11AM</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="12">12PM</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="13">1PM</div>
+			</div
+			><div class="ett-task-total">0</div
+		></div>
+		<div class="ett-task" role="ett-task" data-date="" data-time="0" data-name=""
+			><div class="ett-task-index">01</div
+			><div class="ett-task-name"><input name="ett-task-name" /></div
+			><div class="ett-task-time"
+					unselectable="on"
+					onselectstart="javascript: return false;"
+					ondrag="javascript: return false;"
+					onmousedown="javascript: return false;">
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="11">
+					<div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div>
+				</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="12">
+					<div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div>
+				</div>
+				<div class="bubble-hour-break"><br /></div>
+				<div class="bubble-hour" role="bubble-hour" data-time="0" data-hour="13">
+					<div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div
+					><div class="bubble-15m" role="bubble-15m" data-time="0"
+						><div class="bubble-5m" data-value="15"><br /></div
+						><div class="bubble-5m" data-value="10"><br /></div
+						><div class="bubble-5m" data-value="5"><br /></div
+					></div>
+				</div>
+			</div
+			><div class="ett-task-total">0</div
+		></div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker.min.js"></script>
+	<script>
+		/// SETUP CAL PICKER
+		const calPopup = document.querySelector('#ett-date');
+    	const datepicker = new Datepicker(calPopup, {
+			format: 'yyyy-mm-dd'
+		});
+		calPopup.addEventListener('focus', ev => {
+			let dp = ev.target.parentNode.querySelector('.datepicker')
+			dp.style.marginLeft = '-128px';
+			dp.style.left = '50%';
+		})
+	</script>
+	<style>
+		#ett-date-container .datepicker-cell.has-data:after {
+			content: '*';
+			font-size: 0.8em;
+			position: relative;
+			top: -0.4em;
+			left: 0.2em;
+			color: darkorange;
+		}
+	</style>
+</body>
+</html>

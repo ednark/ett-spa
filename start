@@ -1,0 +1,29 @@
+#!/bin/bash
+
+PORT=${1:-8888}
+
+if command -v php &> /dev/null
+then
+    php -S 127.0.0.1:$PORT
+elif command -v python3 &> /dev/null
+then
+   python3 -m http.server $PORT
+elif command -v python &> /dev/null
+then
+    python -m SimpleHTTPServer $PORT
+elif command -v npm &> /dev/null
+then
+    npm list -g http-server &> /dev/null
+    FOUND=$?
+    if [ "$FOUND" == "1" ]
+    then
+        npm install http-server -g
+    fi
+    if command -v http-server &> /dev/null
+    then
+        http-server -p $PORT
+    fi
+elif command -v docker &> /dev/null
+then
+    docker run --name ett-webserver -v $PWD:/usr/share/nginx/html:ro -p 127.0.0.1:$PORT:80/tcp nginx
+fi

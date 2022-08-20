@@ -1,0 +1,159 @@
+
+
+#ett-header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0px;
+	border: solid 0px red;
+}
+#ett-title {
+	flex-grow: 3;
+}
+#ett-date-container {
+	flex-grow: 1;
+	display: flex;
+	border: solid 0px orange;
+	position: relative;
+}
+#ett-date {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	border: solid 0px red;
+}
+
+
+.ett-task-name,
+.ett-task-time,
+.ett-task-total
+{
+	height: 3em;
+}
+
+.ett-task {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0px;
+	border: solid 0px red;
+}
+.ett-task-index {
+	margin: 0px;
+	padding: 0px;
+}
+.ett-task-name {
+	margin: 0px;
+	padding: 0px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: 313px;
+	padding-right: .75em;
+}
+.ett-task-name input {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	width: 100%;
+	min-width: 313px;
+	border: solid 1px black;
+}
+.task-header .ett-task-index {
+	visibility: hidden;
+}
+.task-header .ett-task-name input {
+	position: relative;
+	left: -1.5em;
+}
+.task-subheader .ett-task-total {
+	visibility: hidden;
+}
+.ett-task-total {
+	flex-grow: 1;
+	width: 4em;
+	height: auto;
+}
+.ett-task-time {
+	flex-grow: 2;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	margin: 0px;
+	padding: 0px;
+	max-width: 850px;
+	min-width: 785px;
+}
+
+.bubble-hour {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	text-overflow: hidden;
+
+	width: 3em;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	gap: 0px;
+	flex-grow: 4;
+}
+
+.bubble-hour-break {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	text-overflow: hidden;
+	width: 0px;
+}
+.bubble-15m {
+	border: solid 2px;
+	border-radius: 4px;
+	width: 6px;
+	height: 17px;
+	margin: 0px;
+    margin-left: 1px;
+	margin-right: 1px;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: start;
+}
+.bubble-hour .bubble-15m {
+	justify-content: center;
+}
+.bubble-15m > .bubble-5m {
+	visibility: hidden;
+}
+.bubble-15m.bubble3 > .bubble-5m {
+	flex: 1;
+	visibility: visible;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	width:  6px;
+	height: 5px;
+}
+.bubble-15m.bubble3 > .bubble-5m:nth-child(1) {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+.bubble-15m.bubble3 > .bubble-5m:nth-child(2) {
+	border-top:  dotted 1px;
+	border-bottom:  dotted 1px;
+}
+.bubble-15m.bubble3 > .bubble-5m:nth-child(3) {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+

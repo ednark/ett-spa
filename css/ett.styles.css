@@ -1,0 +1,173 @@
+#ett-header {
+	background-color: rgb(220, 223, 238);
+	border-radius: 4px;
+	padding: .3em;
+	font-family: sans-serif, monospace;
+	font-weight: bolder;
+	margin-bottom:  2em;
+}
+#ett-title,
+#ett-date-container {
+	font-size: 2em;
+	line-height: 1.3em;
+	border-radius: 4px;
+}
+#ett-title {
+	color: steelblue;
+}
+#ett-date-container {
+	background-color: white;
+	color: #607072;
+	text-align: center;
+}
+#ett-date {
+	font-family: sans-serif, monospace;
+	font-size: 1em;
+	line-height: 1.3em;
+	text-align: center;
+}
+
+.ett-task-index {
+	border: solid 2px;
+	border-radius: 4px;
+	width: 18px;
+	height: 18px;
+	margin: 0px;
+	text-align: center;
+	margin-right: 4px;
+	font-family: sans-serif, monospace;
+	line-height: 20px;
+	background-color: white;
+	border-color: steelblue;
+	color: steelblue;
+}
+.ett-major-task .ett-task-index {
+	font-weight:  bold;
+	background-color: darkorange;
+	border-color: darkorange;
+	color: white;
+}
+
+.task-header .ett-task-time {
+	color: darkorange;
+	font-family: sans-serif, monospace;
+	font-weight: bold;
+	user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.task-header .ett-task-name input {
+	color: steelblue;
+	font-family: sans-serif, monospace;
+	font-weight: bolder;
+	font-size: 1em;
+	word-wrap: wrap;
+}
+.ett-task-name input {
+	height: 21px;
+	text-indent: .2em;
+	border: none;
+	border-bottom: solid 2px steelblue;
+	border-bottom-left-radius: 8px;
+	border-top: 0px;
+	border-top-left-radius: 0px;
+}
+.ett-task-name input:focus {
+	outline: none;
+}
+@media only screen and (max-width: 1190px) {
+	.ett-task-name input {
+		border-bottom: 0px;
+		border-bottom-left-radius: 0px;
+		border-top: solid 2px steelblue;
+		border-top-left-radius: 8px;
+	}
+}
+
+#task-subheader > div {
+
+}
+
+.ett-task-total {
+	min-width: 3em;
+	max-width: 4em;
+	border: none;
+	font-family: sans-serif, monospace;
+	text-align: right;
+	font-size: .8em;
+}
+.task-header .ett-task-total {
+	font-weight: bold;
+}
+.task-header .ett-task-time {
+	position: relative;
+	overflow: visible;
+}
+.task-header .ett-task-time .bubble-hour:nth-child(1)::before,
+.task-header .ett-task-time .bubble-hour-break:nth-child(1)::before {
+	content: "start";
+	font-family: sans-serif, monospace;
+	font-size: .75em;
+	position: absolute;
+	top: .3em;
+	left: -2.5em;
+}
+.bubble-hour,
+.bubble-hour-break {
+	border-left: solid 1px darkorange;
+}
+.bubble-hour:last-of-type {
+	border-right: solid 1px darkorange;
+}
+.bubble-15m {
+	border-color: steelblue;
+	background-color: #FFF;
+}
+.bubble-15m.bubble3 > .bubble-5m {
+	border-color: rgba(70,130,180,.5);
+	background-color: #FFF;
+}
+
+.bubble-hour[data-hour="6"]  .bubble-15m,
+.bubble-hour[data-hour="12"] .bubble-15m,
+.bubble-hour[data-hour="18"] .bubble-15m {
+  	border-color: darkorange;
+}
+
+.bubble-hour[data-hour="6"]  .bubble-15m.bubble3 > .bubble-5m:nth-child(2),
+.bubble-hour[data-hour="12"] .bubble-15m.bubble3 > .bubble-5m:nth-child(2),
+.bubble-hour[data-hour="18"] .bubble-15m.bubble3 > .bubble-5m:nth-child(2) {
+  	border-color: rgba(255,165,0,.5);
+}
+
+.bubble-15m.fill,
+.bubble-15m.bubble3 > .bubble-5m.fill {
+	background-color:  #607072;
+}
+.task-header .ett-task-name input,
+.task-header .ett-task-total  {
+	border-color: transparent;
+}
+#task-subheader.task-header .ett-task-total  {
+	visibility: hidden;
+}
+
+
+#ett-date-container .datepicker {
+	font-size: 50%;
+	filter: drop-shadow(0rem .5rem .5rem rgb(54, 40, 22));
+}
+
+
+#ett-date-container .datepicker-cell.prev:not(.disabled),
+#ett-date-container .datepicker-cell.next:not(.disabled) {
+	font-size: 80%;
+	color: #9a9a9a;
+}
+#ett-date-container .datepicker-controls .button:hover,
+#ett-date-container .datepicker-cell:not(.disabled):not(.selected):hover {
+	background-color: #cddbf3;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Emergent Task Timer</title>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/ett.layout.css">
+	<link rel="stylesheet" href="css/ett.styles.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css">
+
+</head>
+<!-- https://developer.okta.com/blog/2019/12/18/vanilla-javascript-components -->
+<body>
+	<div id="ett">ETT</div>
+	<template id="ett-day-template">
+		<header id="ett-header" class="ett-header">
+			<div id="ett-title" class="ett-title">Emergent Task Timer</div>
+			<div id="ett-date-container" class="ett-date-container">
+				<input id="ett-date" class="ett-date" value="YYYY-MM-DD" />
+			</div>
+		</header>
+		<main id="ett-tasks" class="ett-tasks"></main>
+	</template>
+	<template id="ett-task-template">
+		<div class="ett-task" role="ett-task" data-date="" data-time="0" data-name=""
+			><div class="ett-task-index"><br /></div
+			><div class="ett-task-name"><input name="ett-task-name" /></div
+			><div class="ett-task-time"
+					unselectable="on"
+					onselectstart="javascript: return false;"
+					ondrag="javascript: return false;"
+					onmousedown="javascript: return false;"
+			></div
+			><div class="ett-task-total">0</div
+		></div>
+	</template>
+	<template id="bubble-hour-template">
+		<div class="bubble-hour" role="bubble-hour" data-time="0"></div>
+	</template>
+	<template id="bubble-15m-template">
+		<div class="bubble-15m" role="bubble-15m" data-time="0"
+			><div class="bubble-5m" data-value="15"><br /></div
+			><div class="bubble-5m" data-value="10"><br /></div
+			><div class="bubble-5m" data-value="5"><br /></div
+		></div>
+	</template>
+
+	<script src="js/ng.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker.min.js"></script>
+	<script>
+		const ett = document.getElementById('ett')
+		if ( ett ) {
+			let today = new Date().toLocaleDateString('en-CA')
+			let storage = new LocalStorage()
+			const ettDay = new EttDay(ett,today,storage)
+			ettDay.render()
+		}
+	</script>
+</body>
+</html>
